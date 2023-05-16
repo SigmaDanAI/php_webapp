@@ -17,9 +17,7 @@
     } else $error_message = 'Invalid username or password.';
       
   }
-
-
-
+  
 ?>
 
 
