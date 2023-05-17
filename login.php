@@ -1,4 +1,8 @@
 <?php
+  //start the session
+  session_start();
+  if(isset($_SESSION['user'])) header('location: dashboard.php');
+
   $error_message ='';
 
   if($_POST){
@@ -13,7 +17,11 @@
     $stmt->execute();
 
     if($stmt->rowCount() > 0){
+      $stmt->setFetchMode(PDO::FETCH_ASSOC);
+      $user = $stmt->fetchAll()[0];
+      $_SESSION['user'] = $user;
 
+      header('Location: dashboard.php');
     } else $error_message = 'Invalid username or password.';
       
   }
