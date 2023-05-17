@@ -1,8 +1,11 @@
 <?php
   session_start();
+<<<<<<< HEAD
   if(!isset($_SESSION['user'])) header('location: login.php');
   
 
+=======
+>>>>>>> 6d11a251f449b6c8088beb381ce39ad04f7192ca
   $user = $_SESSION['user'];
 
 
@@ -53,6 +56,7 @@
             </a>
           </li>
           <li class="nav-item">
+<<<<<<< HEAD
             <a class="nav-link" href="#"><i class="fas fa-users"></i>Users</a>
           </li>
           <li class="nav-item">
@@ -60,6 +64,18 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-cog"></i>Settings</a>
+=======
+            <a class="nav-link" href="#">
+              <i class="fas fa-users"></i>
+              Users
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fas fa-cog"></i>
+              Settings
+            </a>
+>>>>>>> 6d11a251f449b6c8088beb381ce39ad04f7192ca
           </li>
         </ul>
       </div>
@@ -77,6 +93,7 @@
               <h5 class="card-title">Users</h5>
               <p class="card-text">View and manage users.</p>
               <a href="#" class="btn btn-primary">View Users</a>
+<<<<<<< HEAD
             </div>
           </div>
         </div>
@@ -86,6 +103,8 @@
               <h5 class="card-title">Products</h5>
               <p class="card-text">View and manage products.</p>
               <a href="#" class="btn btn-primary">View Products</a>
+=======
+>>>>>>> 6d11a251f449b6c8088beb381ce39ad04f7192ca
             </div>
           </div>
         </div>
