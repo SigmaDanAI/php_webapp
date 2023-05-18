@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
   //start the session
   session_start();
@@ -30,8 +29,6 @@
 ?>
 
 
-=======
->>>>>>> b88aa7b18ca4e85dffa181cf27b2c29746b01b53
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +45,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-<<<<<<< HEAD
     <?php if(!empty($error_message)) { ?>   
         <div id=errorMessage>
           <strong>Error: <?= $error_message ?> </strong>
@@ -59,12 +55,6 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand fw-semibold" href="index.php">LogoThingy</a>
-=======
-  <div class="nav-bar">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-semibold" href="#">LogoThingy</a>
->>>>>>> b88aa7b18ca4e85dffa181cf27b2c29746b01b53
       </div>
     </nav>
   </div>
@@ -74,7 +64,6 @@
         <div class="card">
           <div class="card-header fw-semibold ">Login</div>
           <div class="card-body">
-<<<<<<< HEAD
             <form action="login.php" method="POST">
               <div class="form-group mb-3">
                 <label for="username" class="mb-1">Username</label>
@@ -83,16 +72,6 @@
               <div class="form-group mb-3">
                 <label for="password" class="mb-1">Password</label>
                 <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-=======
-            <form>
-              <div class="form-group mb-3">
-                <label for="email" class="mb-1">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-              </div>
-              <div class="form-group mb-3">
-                <label for="password" class="mb-1">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
->>>>>>> b88aa7b18ca4e85dffa181cf27b2c29746b01b53
               </div>
               <div class="form-check mb-3">
                 <input type="checkbox" class="form-check-input " id="remember">
