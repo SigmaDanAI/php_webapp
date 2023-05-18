@@ -53,8 +53,21 @@
                 <input type="password" class="form-control" id="password" name="password" placeholder="Choose a password" required>
               </div>
               <!--<input type="hidden" name="table" value= "users" /> -->
-              <button type="submit" class="btn btn-primary">Register new user</button>
+              <button type="submit" class="btn btn-primary mb-3 ">Register new user</button>
             </form>
+            <?php
+              if(isset($_SESSION['response'])){
+                $response_message= $_SESSION['response']['message'];
+                $is_success= $_SESSION['response']['success'];
+              
+            ?>
+            <div class="responseMessage text-center">
+              <p class="alert <?= $is_success ? 'alert-success' : 'alert-danger' ?>">
+                <?= $response_message ?>
+              </p>
+            </div>
+
+            <?php unset($_SESSION['response']); }?>
           </div>
         </div>
       </div>

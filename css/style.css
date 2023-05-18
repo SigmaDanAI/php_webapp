@@ -25,3 +25,7 @@ body{
     color: red;
     font-size: x-large;
 }
+
+.responseMessage{
+    text-align: center;
+}
