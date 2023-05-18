@@ -11,20 +11,6 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
     
-    /*$query = 'SELECT * FROM user WHERE user.username ="'. $username .'" AND user.password="'. $password .'"';
-    $stmt = $conn->prepare($query);
-    
-    $stmt->execute();
-
-    if($stmt->rowCount() > 0){
-      $stmt->setFetchMode(PDO::FETCH_ASSOC);
-      $user = $stmt->fetchAll()[0];
-      $_SESSION['user'] = $user;
-
-      header('Location: dashboard.php');
-    } else $error_message = 'Invalid username or password.';
-    */
-    
     $stmt= $conn->prepare("SELECT * FROM user");
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -38,6 +24,7 @@
       if(password_verify($password, $upass)){
         $user_exist= true;
         $_SESSION['user'] = $user;
+        
 
         break;
       }
@@ -47,13 +34,9 @@
     if($user_exist) header('location: dashboard.php');
     else $error_message = 'Please check the username and password.';
 
-
-      
-
   }
-  
-?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">

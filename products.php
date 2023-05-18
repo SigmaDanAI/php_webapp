@@ -3,7 +3,7 @@
   if(!isset($_SESSION['user'])) header('location: login.php');
   
   $user = $_SESSION['user'];
-
+  
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +51,7 @@
             <a class="nav-link" href="register.php"><i class="fas fa-users"></i>Users</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="products.php"><i class='fas fa-box-open'></i>Products</a>
+            <a class="nav-link" href="#"><i class='fas fa-box-open'></i>Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-cog"></i>Settings</a>
@@ -62,7 +62,7 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
+        <h1 class="h2">Products</h1>
         <span>Welcome, <?=$user['name'] .' '.$user['last_name'] ?> </span>
       </div>
       <div class="row">
