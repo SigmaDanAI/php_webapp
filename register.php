@@ -5,8 +5,7 @@
   $_SESSION['table'] = 'user';
   $user= $_SESSION['user'];
 
-
-
+  
 ?>
 
 <!DOCTYPE html>
