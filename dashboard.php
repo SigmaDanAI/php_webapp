@@ -12,32 +12,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Dashboard</title>
+
+  <link rel="stylesheet" href="css/main.css">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="css/bootstrap.bundle.min.js"></script>
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  
+
 </head>
 <body>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Dashboard</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" id="homeBtn" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a href="database/logout.php" id="logoutBtn">Logout</a>
-        </li>
-      </ul>
+    <div class="container">
+      <a class="navbar-brand" href="#">Dashboard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" id="homeBtn" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="database/logout.php" id="logoutBtn">Logout</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
+
+
 
   <div class="container-fluid">
   <div class="row">
@@ -45,13 +54,36 @@
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="dashboard.php"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+            <a class="nav-link active" href="dashboard.php"></i>Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="register.php"><i class="fas fa-users"></i>Users</a>
+            <a class="nav-link" data-bs-toggle="collapse" href="#usersCollapse"><i class="fas fa-users"></i> <span>Users</span> <i class="fas fa-angle-down"></i></a>
+            <div class="collapse" id="usersCollapse">
+              <ul class="nav flex-column ml-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="add-user.php">Add User</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Modify User</a>
+                </li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="products.php"><i class='fas fa-box-open'></i>Products</a>
+            <a class="nav-link" data-bs-toggle="collapse" href="#productCollapse"><i class="fas fa-box-open"></i> <span>Products</span> <i class="fas fa-angle-down"></i></a>
+            <div class="collapse" id="productCollapse">
+              <ul class="nav flex-column ml-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="products.php">View Products</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Add Product</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Delete Product</a>
+                </li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-cog"></i>Settings</a>
@@ -59,6 +91,9 @@
         </ul>
       </div>
     </nav>
+
+    
+
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -108,4 +143,5 @@
 
 
 </body>
+
 </html>

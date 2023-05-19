@@ -11,7 +11,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>View Products</title>
+  <title>Dashboard</title>
 
   <link rel="stylesheet" href="css/main.css">
   <!-- Bootstrap CSS -->
@@ -91,48 +91,60 @@
         </ul>
       </div>
     </nav>
+    </div>
 
     
 
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-        <span>Welcome, <?=$user['name'] .' '.$user['last_name'] ?> </span>
+    <div class="container ">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header fw-semibold ">Registration</div>
+          <div class="card-body">
+            <form method="POST" action="database/add-user.php">
+              <div class="form-group mb-3">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+              </div>
+              <div class="form-group mb-3">
+                <label for="last_name" class="mb-1">Last Name</label>
+                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your last name" required>
+              </div>
+              <div class="form-group mb-3">
+                <label for="username" class="mb-1">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Choose a username" required>
+              </div>
+              <div class="form-group mb-3">
+                <label for="email" class="mb-1">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group mb-3">
+                <label for="password" class="mb-1">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Choose a password" required>
+              </div>
+              <!--<input type="hidden" name="table" value= "users" /> -->
+              <button type="submit" class="btn btn-primary mb-3 ">Register new user</button>
+            </form>
+            <?php
+              if(isset($_SESSION['response'])){
+                $response_message= $_SESSION['response']['message'];
+                $is_success= $_SESSION['response']['success'];
+              
+            ?>
+            <div class="responseMessage text-center">
+              <p class="alert <?= $is_success ? 'alert-success' : 'alert-danger' ?>">
+                <?= $response_message ?>
+              </p>
+            </div>
+
+            <?php unset($_SESSION['response']); }?>
+          </div>
+        </div>
       </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Users</h5>
-              <p class="card-text">View and manage users.</p>
-              <a href="#" class="btn btn-primary">View Users</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Products</h5>
-              <p class="card-text">View and manage products.</p>
-              <a href="#" class="btn btn-primary">View Products</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Orders</h5>
-              <p class="card-text">View and manage orders.</p>
-              <a href="#" class="btn btn-primary">View Orders</a>
-            </div>
-          </div>
-        </div>
-        
-        
-      </div>
-    </main>
+    </div>
   </div>
+  
 </div>
 
 </div>
