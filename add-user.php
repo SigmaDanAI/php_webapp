@@ -25,7 +25,6 @@
 
 </head>
 <body>
-
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="#">Dashboard</a>
@@ -61,7 +60,7 @@
             <div class="collapse" id="usersCollapse">
               <ul class="nav flex-column ml-3">
                 <li class="nav-item">
-                  <a class="nav-link" href="register.php">Add User</a>
+                  <a class="nav-link" href="add-user.php">Add User</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Modify User</a>
@@ -91,14 +90,8 @@
         </ul>
       </div>
     </nav>
-    </div>
 
-    
-
-
-    <div class="container ">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
+      <div class="container-fluid col-md-6 justify-content-center pt-5">
         <div class="card">
           <div class="card-header fw-semibold ">Registration</div>
           <div class="card-body">
