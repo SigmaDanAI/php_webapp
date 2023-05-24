@@ -4,6 +4,20 @@
   
   $user = $_SESSION['user'];
 
+  // Include the connection.php file
+  require_once 'database/connection.php';
+
+  // Retrieve all users from the database
+  $users = array();
+
+  try {
+      $stmt = $conn->prepare("SELECT * FROM user");
+      $stmt->execute();
+      $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  } catch(PDOException $e) {
+      echo "Error: " . $e->getMessage();
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -97,43 +111,43 @@
     
 
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-        <span>Welcome, <?=$user['name'] .' '.$user['last_name'] ?> </span>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Users</h5>
-              <p class="card-text">View and manage users.</p>
-              <a href="#" class="btn btn-primary">View Users</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Products</h5>
-              <p class="card-text">View and manage products.</p>
-              <a href="#" class="btn btn-primary">View Products</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Orders</h5>
-              <p class="card-text">View and manage orders.</p>
-              <a href="#" class="btn btn-primary">View Orders</a>
-            </div>
-          </div>
-        </div>
-        
-        
-      </div>
-    </main>
+    <div class="container-fluid col-md-6 justify-content-center pt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">Updated At</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($users as $user): ?>
+                    <tr>
+                        <td><?php echo $user['id']; ?></td>
+                        <td><?php echo $user['name']; ?></td>
+                        <td><?php echo $user['last_name']; ?></td>
+                        <td><?php echo $user['username']; ?></td>
+                        <td><?php echo $user['email']; ?></td>
+                        <td><?php echo $user['role']; ?></td>
+                        <td class="text-center">
+                            <?php if ($user['status'] == 1): ?>
+                                <input type="checkbox" checked disabled>
+                            <?php else: ?>
+                                <input type="checkbox" disabled>
+                            <?php endif; ?>
+                        </td>
+                        <td><?php echo $user['created_at']; ?></td>
+                        <td><?php echo $user['updated_at']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
   </div>
  </div>
 
