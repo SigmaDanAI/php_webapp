@@ -61,13 +61,16 @@
               <div class="collapse" id="usersCollapse">
                 <ul class="nav flex-column ml-3">
                   <li class="nav-item">
+                      <a class="nav-link" href="display-users.php">Display users</a>
+                  </li>
+                  <li class="nav-item">
                     <a class="nav-link" href="add-user.php">Add User</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Modify User</a>
                   </li>
                 </ul>
-              </div>
+            </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#productCollapse"><i class="fas fa-box-open"></i> <span>Products</span> <i class="fas fa-angle-down"></i></a>

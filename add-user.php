@@ -59,6 +59,9 @@
             <a class="nav-link" data-bs-toggle="collapse" href="#usersCollapse"><i class="fas fa-users"></i> <span>Users</span> <i class="fas fa-angle-down"></i></a>
             <div class="collapse" id="usersCollapse">
               <ul class="nav flex-column ml-3">
+              <li class="nav-item">
+                  <a class="nav-link" href="display-users.php">Display users</a>
+                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="add-user.php">Add User</a>
                 </li>
@@ -95,7 +98,7 @@
         <div class="card">
           <div class="card-header fw-semibold ">Registration</div>
           <div class="card-body">
-            <form method="POST" action="database/add-user.php">
+            <form method="POST" action="database/validate-user.php">
               <div class="form-group mb-3">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
